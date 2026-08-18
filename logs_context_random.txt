@@ -1,0 +1,48 @@
+﻿python : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate 
+limits and faster downloads.
+At line:1 char:302
++ ... xt' } catch {} } }; python train_context.py --random-llm 2>&1 | Tee-O ...
++                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+model: context_random_llm  trainable params: 1,468,615
+epoch   1/25  loss=0.9618  val_f1=0.9089 *
+epoch   2/25  loss=0.1744  val_f1=0.9014
+epoch   3/25  loss=0.1329  val_f1=0.8985
+epoch   4/25  loss=0.1223  val_f1=0.8559
+epoch   5/25  loss=0.1130  val_f1=0.8987
+epoch   6/25  loss=0.1038  val_f1=0.9017
+epoch   7/25  loss=0.0978  val_f1=0.8903
+epoch   8/25  loss=0.0883  val_f1=0.9014
+epoch   9/25  loss=0.0911  val_f1=0.8896
+epoch  10/25  loss=0.0910  val_f1=0.8980
+epoch  11/25  loss=0.0809  val_f1=0.8985
+epoch  12/25  loss=0.0796  val_f1=0.8962
+epoch  13/25  loss=0.0745  val_f1=0.8977
+epoch  14/25  loss=0.0772  val_f1=0.8932
+epoch  15/25  loss=0.0678  val_f1=0.9082
+epoch  16/25  loss=0.0660  val_f1=0.9061
+epoch  17/25  loss=0.0693  val_f1=0.8992
+epoch  18/25  loss=0.0622  val_f1=0.8993
+epoch  19/25  loss=0.0677  val_f1=0.9034
+epoch  20/25  loss=0.0650  val_f1=0.8999
+epoch  21/25  loss=0.0614  val_f1=0.9005
+epoch  22/25  loss=0.0610  val_f1=0.9017
+epoch  23/25  loss=0.0593  val_f1=0.8999
+epoch  24/25  loss=0.0622  val_f1=0.9030
+epoch  25/25  loss=0.0580  val_f1=0.8999
+
+best val macro-F1: 0.9089 (epoch 1)
+test macro-F1:     0.9090
+
+test confusion matrix (rows = true):
+                      walking walking_ walking_  sitting standing   laying
+            walking       485        5        6        0        0        0
+   walking_upstairs        20      424       27        0        0        0
+ walking_downstairs         3        6      411        0        0        0
+            sitting         0        8        0      394       89        0
+           standing         0        1        0       78      453        0
+             laying         0       27        0        0        0      510
+
+saved checkpoints/context_random_llm.pt

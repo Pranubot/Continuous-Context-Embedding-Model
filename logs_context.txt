@@ -1,0 +1,52 @@
+﻿python : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate 
+limits and faster downloads.
+At line:1 char:302
++ ... ng = 'PlainText' } catch {} } }; python train_context.py 2>&1 | Tee-O ...
++                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]
+Loading weights:  57%|█████▋    | 165/290 [00:00<00:00, 1601.91it/s]
+Loading weights: 100%|██████████| 290/290 [00:00<00:00, 1464.63it/s]
+model: context  trainable params: 1,468,615
+epoch   1/25  loss=0.9750  val_f1=0.8787 *
+epoch   2/25  loss=0.1934  val_f1=0.8243
+epoch   3/25  loss=0.1521  val_f1=0.8937 *
+epoch   4/25  loss=0.1110  val_f1=0.8921
+epoch   5/25  loss=0.1119  val_f1=0.8869
+epoch   6/25  loss=0.1032  val_f1=0.8939 *
+epoch   7/25  loss=0.0975  val_f1=0.9045 *
+epoch   8/25  loss=0.0867  val_f1=0.8973
+epoch   9/25  loss=0.0900  val_f1=0.8854
+epoch  10/25  loss=0.0923  val_f1=0.8958
+epoch  11/25  loss=0.0800  val_f1=0.9060 *
+epoch  12/25  loss=0.0787  val_f1=0.8984
+epoch  13/25  loss=0.0741  val_f1=0.9101 *
+epoch  14/25  loss=0.0759  val_f1=0.8880
+epoch  15/25  loss=0.0642  val_f1=0.8947
+epoch  16/25  loss=0.0676  val_f1=0.9031
+epoch  17/25  loss=0.0729  val_f1=0.9014
+epoch  18/25  loss=0.0610  val_f1=0.9068
+epoch  19/25  loss=0.0662  val_f1=0.9005
+epoch  20/25  loss=0.0668  val_f1=0.9029
+epoch  21/25  loss=0.0605  val_f1=0.9030
+epoch  22/25  loss=0.0612  val_f1=0.9060
+epoch  23/25  loss=0.0594  val_f1=0.9033
+epoch  24/25  loss=0.0609  val_f1=0.9077
+epoch  25/25  loss=0.0577  val_f1=0.9008
+
+best val macro-F1: 0.9101 (epoch 13)
+test macro-F1:     0.9037
+
+test confusion matrix (rows = true):
+                      walking walking_ walking_  sitting standing   laying
+            walking       446        1       49        0        0        0
+   walking_upstairs         6      424       37        4        0        0
+ walking_downstairs        20        2      398        0        0        0
+            sitting         0        8        0      417       65        1
+           standing         1        0        0       88      443        0
+             laying         0        0        0        0        0      537
+
+saved checkpoints/context.pt
